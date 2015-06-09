@@ -18,9 +18,9 @@ def render(image):
   #  "file://#{ABSPREFIX}/#{image}"
   #puts templatexml.root.elements["//pattern[@inkscape:label='avatarpattern']/image"].attributes['sodipodi:absref']
   templatexml.write(TMP, encoding="utf-8")
-  exec = "%s -e %s %s" % (INKSCAPE, OUT, TMP)
-  print(exec)
-  os.system(exec)
+  command = "%s -e %s %s" % (INKSCAPE, OUT, TMP)
+  print(command)
+  os.system(command)
 
 if len(sys.argv)>1:
   render(sys.argv[1])
